@@ -50,7 +50,7 @@ class GestureStressTest:
         self.DELAY_MS = 200
         # self.DELAY_MS_FUN = 6000
         self.POS_MAX_LOSS = 200
-        self.DEFAULT_SPEED = 100
+        self.DEFAULT_SPEED = 255
         self.SIXTH_FINGER_MIN_POS = 728
         self.MAX_CYCLE_NUM = 1# 测试循环的最大次数，初始为1
         # 定义28个手势动作，每个动作分两步完成
