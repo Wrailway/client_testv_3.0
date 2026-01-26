@@ -291,6 +291,22 @@ class ClientTest(QtCore.QObject):
     def close_event_handler(self, event):
         self.running = False
         self.write_to_json_file(stop_test=True,pause_test=True)
+        self.delete_shared_data_file()
+        event.accept()
+
+    def delete_shared_data_file(self):
+        """删除shared_data.json文件，包含异常处理"""
+        file_path = 'shared_data.json'
+        try:
+            if os.path.exists(file_path):  # 先判断文件是否存在
+                os.remove(file_path)
+                print(f"成功删除文件：{file_path}")
+            else:
+                print(f"文件 {file_path} 不存在，无需删除")
+        except PermissionError:
+            print(f"权限不足，无法删除 {file_path}")
+        except Exception as e:
+            print(f"删除文件失败：{e}")
 
     def write_to_json_file(self, stop_test, pause_test):
         data_to_write = {
