@@ -26,8 +26,8 @@ from PyQt5.QtGui import QColor, QTextCharFormat, QTextCursor  # 正确导入QTex
 from pymodbus import FramerType
 from pymodbus.client import ModbusSerialClient
 from pymodbus.exceptions import ConnectionException, ModbusIOException
-from OHandSerialAPI import HAND_RESP_SUCCESS, HAND_PROTOCOL_UART, MAX_MOTOR_CNT, MAX_THUMB_ROOT_POS, MAX_FORCE_ENTRIES, OHandSerialAPI
-from can_interface import *
+from scripts.OHandSerialAPI import HAND_RESP_SUCCESS, HAND_PROTOCOL_UART, MAX_MOTOR_CNT, MAX_THUMB_ROOT_POS, MAX_FORCE_ENTRIES, OHandSerialAPI
+from scripts.can_interface import *
 import can
 
 # 设置日志级别为INFO，获取日志记录器实例
