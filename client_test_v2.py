@@ -1315,7 +1315,7 @@ class ClientTest(QtCore.QObject):
                     client.disConnect()
 
         # 使用线程池并发执行每个端口的任务
-        with concurrent.futures.ThreadPoolExecutor() as executor:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=64) as executor:
             results = list(executor.map(process_port, ports))
 
         # 处理收集到的结果，提取有效设备信息并更新类属性
