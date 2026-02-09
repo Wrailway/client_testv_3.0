@@ -862,6 +862,9 @@ class ClientTest(QtCore.QObject):
                 self.label_com_list.append(widget)
             elif isinstance(widget, QtWidgets.QTextEdit):
                 self.editText_current_list.append(widget)
+                widget.setFixedSize(150, 30)
+                # 可选：设置文本居中，视觉效果更好
+                widget.setAlignment(QtCore.Qt.AlignCenter)
                 
     def update_current_ui_portnames(self,ports=[]):
         if ports[0] == self.no_used_port:
